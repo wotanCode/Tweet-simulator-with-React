@@ -1,11 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Container, Snackbar } from "@mui/material";
+//import Container from '@mui/material/Button';
+
+import Header from "./components/header";
 
 function App() {
   return (
-    <div className="App">
-      <h1>estamos en App</h1>
-    </div>
+    <Container className="tweets-simulator" maxWidth={false}>
+      <Header></Header>
+    </Container>
   );
 }
 
