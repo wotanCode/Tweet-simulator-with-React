@@ -6,7 +6,7 @@ Proyecto que simula el envio de Tweets usando React!
 
 Para ejecutar el proyecto, solo debes usar dos comandos
 
-#### `npm install @mui/material`
+#### `npm install`
 #### `npm run start`
 
 ## Como librerias externas, se utilizaron:
