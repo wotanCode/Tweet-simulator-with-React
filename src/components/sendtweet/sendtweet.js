@@ -3,6 +3,7 @@ import "./sendtweet.scss";
 import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import moment from "moment";
+import FormSendTweet from "../formsendtweet";
 
 import ModalContainer from "../modalcontainer";
 
@@ -26,7 +27,7 @@ export default function SendTweet() {
         <AddIcon />
       </Fab>
       <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
-        <p>contenido del modal</p>
+        <FormSendTweet />
       </ModalContainer>
     </div>
   );
