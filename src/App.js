@@ -6,6 +6,7 @@ import { Container, Snackbar } from "@mui/material";
 import Header from "./components/header";
 import SendTweet from "./components/sendtweet";
 
+
 function App() {
   return (
     <Container className="tweets-simulator" maxWidth={false}>
