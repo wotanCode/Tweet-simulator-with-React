@@ -7,7 +7,8 @@ import FormSendTweet from "../formsendtweet";
 import ModalContainer from "../modalcontainer";
 import { TWEET_STORAGE } from "../../utils/contants";
 
-export default function SendTweet() {
+export default function SendTweet(props) {
+  const { setToastProps } = props;
   //Boton inferior para abrir el Modal para crear tweet
   const [isOpenModal, setIsOpenModal] = useState(false);
   const openModal = () => {
@@ -28,6 +29,10 @@ export default function SendTweet() {
     //Tienen que existir ambos campos
     if (!name || !tweet) {
       console.log("Todos los campos del formulario son obligatorios");
+      setToastProps({
+        open: true,
+        text: "Todos los campos del formulario son obligatorios.",
+      });
     } else {
       //guardamos el momento del tweet
       formValue.time = moment();
@@ -36,6 +41,10 @@ export default function SendTweet() {
       //Lo guardamos en el LocalStorage con un JSON
       localStorage.setItem(TWEET_STORAGE, JSON.stringify(AllTweetsArray));
       console.log("Tweet enviado correctamente.");
+      setToastProps({
+        open: true,
+        text: "Tweet enviado correctamente.",
+      });
       //Cerramos el modal
       closeModal();
       //Limpiamos el arreglo
