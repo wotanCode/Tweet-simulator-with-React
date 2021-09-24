@@ -2,7 +2,7 @@
 
 Proyecto que simula el envio de Tweets usando React!
 
-## Scrips
+## Scripts
 
 Para ejecutar el proyecto, solo debes usar dos comandos
 
