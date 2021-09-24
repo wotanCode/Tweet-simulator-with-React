@@ -17,6 +17,12 @@ export default function SendTweet() {
     setIsOpenModal(false);
   };
 
+  //enviar el formulario
+  const sendTweet = (event, formValue) => {
+    event.preventDefault();
+    console.log("Enviando tweet");
+  };
+
   return (
     <div className="send-tweet">
       <Fab
@@ -29,8 +35,8 @@ export default function SendTweet() {
       </Fab>
       //Abrimos modal
       <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
-        //llamamos al form dentro del modal
-        <FormSendTweet />
+        //llamamos al form dentro del modal y enviamos sendTweet
+        <FormSendTweet sendTweet={sendTweet} />
       </ModalContainer>
     </div>
   );

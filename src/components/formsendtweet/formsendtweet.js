@@ -4,11 +4,14 @@ import "./formsendtweet.scss";
 
 //Este es el formulario donde se crea el tweet
 export default function FormSendTweet(props) {
+  //Recuperamos por props la funciona enviada en formsendtweet
+  const { sendTweet } = props;
+
   const {} = props;
   return (
     <div className="form-send-tweet">
       <h2 className="form-send-tweet__tittle">Enviar tweet</h2>
-      <form className="form-send-tweet__form">
+      <form className="form-send-tweet__form" onSubmit={event => sendTweet(event)}>
         <FormControl>
           <FormGroup>
             <TextField
