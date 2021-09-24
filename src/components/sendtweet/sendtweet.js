@@ -4,8 +4,8 @@ import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import moment from "moment";
 import FormSendTweet from "../formsendtweet";
-
 import ModalContainer from "../modalcontainer";
+import { TWEET_STORAGE } from "../../utils/contants";
 
 export default function SendTweet() {
   //Boton inferior para abrir el Modal para crear tweet
@@ -21,6 +21,26 @@ export default function SendTweet() {
   const sendTweet = (event, formValue) => {
     event.preventDefault();
     console.log("Enviando tweet");
+    console.log(formValue);
+    //Aqui esta el objeto
+    const { name, tweet } = formValue;
+    let AllTweetsArray = [];
+    //Tienen que existir ambos campos
+    if (!name || !tweet) {
+      console.log("Todos los campos del formulario son obligatorios");
+    } else {
+      //guardamos el momento del tweet
+      formValue.time = moment();
+      //Metemos en el arreglo el contenido del formValue
+      AllTweetsArray.push(formValue);
+      //Lo guardamos en el LocalStorage con un JSON
+      localStorage.setItem(TWEET_STORAGE, JSON.stringify(AllTweetsArray));
+      console.log("Tweet enviado correctamente.");
+      //Cerramos el modal
+      closeModal();
+      //Limpiamos el arreglo
+      AllTweetsArray = [];
+    }
   };
 
   return (

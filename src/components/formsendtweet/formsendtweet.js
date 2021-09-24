@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormControl, FormGroup, TextField, Button } from "@mui/material";
 import "./formsendtweet.scss";
 
@@ -6,12 +6,30 @@ import "./formsendtweet.scss";
 export default function FormSendTweet(props) {
   //Recuperamos por props la funciona enviada en formsendtweet
   const { sendTweet } = props;
+  //Con useState vamos a enviar el contenido del formulario
+  const [formValue, setFormValue] = useState({
+    name: "",
+    tweet: "",
+  });
+  //Aqui vamos a actualizar el estado de formValue que es lo que toma del twweet
+  const onFormChange = (event) => {
+    //Utilizamos el expressOperator
+    setFormValue({
+      ...formValue,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-  const {} = props;
+  //const {} = props;
   return (
     <div className="form-send-tweet">
       <h2 className="form-send-tweet__tittle">Enviar tweet</h2>
-      <form className="form-send-tweet__form" onSubmit={event => sendTweet(event)}>
+      <form
+        className="form-send-tweet__form"
+        onSubmit={(event) => sendTweet(event, formValue)}
+        //Cada vez que cambie el formulario actualizamos el estado con setFormValue
+        onChange={onFormChange}
+      >
         <FormControl>
           <FormGroup>
             <TextField
