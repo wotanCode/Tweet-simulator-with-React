@@ -8,6 +8,7 @@ import FormSendTweet from "../formsendtweet";
 import ModalContainer from "../modalcontainer";
 
 export default function SendTweet() {
+  //Boton inferior para abrir el Modal para crear tweet
   const [isOpenModal, setIsOpenModal] = useState(false);
   const openModal = () => {
     setIsOpenModal(true);
@@ -26,7 +27,9 @@ export default function SendTweet() {
       >
         <AddIcon />
       </Fab>
+      //Abrimos modal
       <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
+        //llamamos al form dentro del modal
         <FormSendTweet />
       </ModalContainer>
     </div>

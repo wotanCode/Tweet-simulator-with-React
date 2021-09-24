@@ -2,6 +2,7 @@ import React from "react";
 import { FormControl, FormGroup, TextField, Button } from "@mui/material";
 import "./formsendtweet.scss";
 
+//Este es el formulario donde se crea el tweet
 export default function FormSendTweet(props) {
   const {} = props;
   return (
