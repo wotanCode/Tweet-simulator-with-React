@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-//import logo from "./logo.svg";
-import "./App.css";
 import { Container, Snackbar } from "@mui/material";
-//import Container from '@mui/material/Button';
-import ListTweets from "./components/ListTweets";
-
 import Header from "./components/header";
 import SendTweet from "./components/sendtweet";
+import ListTweets from "./components/ListTweets";
 import { TWEET_STORAGE } from "./utils/contants";
+import "./App.css";
 
 function App() {
   const [toastProps, setToastProps] = useState({
@@ -24,7 +21,7 @@ function App() {
 
   return (
     <Container className="tweets-simulator" maxWidth={false}>
-      <Header></Header>
+      <Header />
       <SendTweet setToastProps={setToastProps} allTweets={allTweets} />
       <ListTweets allTweets={allTweets} />
 
@@ -36,7 +33,7 @@ function App() {
         open={toastProps.open}
         autoHideDuration={1000}
         message={<span id="message-id">{toastProps.text}</span>}
-      ></Snackbar>
+      />
     </Container>
   );
 }

@@ -20,7 +20,7 @@ export default function ListTweets(props) {
     <Grid container spacing={3} className="list-tweets">
       {allTweets.map((tweet, index) => (
         <Grid key={index} item xs={4}>
-          <Tweet tweet={tweet} index={tweet} />
+          <Tweet tweet={tweet} index={index} />
         </Grid>
       ))}
     </Grid>

@@ -68,7 +68,7 @@ export default function SendTweet(props) {
       </Fab>
       {/* Abrimos modal */}
       <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
-        //llamamos al form dentro del modal y enviamos sendTweet
+        {/* llamamos al form dentro del modal y enviamos sendTweet */}
         <FormSendTweet sendTweet={sendTweet} />
       </ModalContainer>
     </div>

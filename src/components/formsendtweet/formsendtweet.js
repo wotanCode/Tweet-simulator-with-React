@@ -20,15 +20,14 @@ export default function FormSendTweet(props) {
     });
   };
 
-  //const {} = props;
   return (
     <div className="form-send-tweet">
       <h2 className="form-send-tweet__tittle">Enviar tweet</h2>
       <form
-        className="form-send-tweet__form"
         onSubmit={(event) => sendTweet(event, formValue)}
         //Cada vez que cambie el formulario actualizamos el estado con setFormValue
         onChange={onFormChange}
+        className="form-send-tweet__form"
       >
         <FormControl>
           <FormGroup>
@@ -38,7 +37,7 @@ export default function FormSendTweet(props) {
               name="name"
               margin="normal"
               placeholder="Nombre del usuario"
-            ></TextField>
+            />
           </FormGroup>
           <FormGroup>
             <TextField
@@ -48,7 +47,7 @@ export default function FormSendTweet(props) {
               rows="6"
               placeholder="Escribe tu tweet..."
               margin="normal"
-            ></TextField>
+            />
           </FormGroup>
           <FormGroup>
             <Button type="submit">Escribe tu tweet</Button>

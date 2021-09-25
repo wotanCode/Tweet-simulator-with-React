@@ -8,6 +8,8 @@ export default function ModalContainer(props) {
   //Modal
   return (
     <Modal
+      aria-labelledby="transition-modal-title"
+      aria-describedby="transition-modal-description"
       className="modal-container"
       open={isOpenModal}
       onClose={closeModal}
