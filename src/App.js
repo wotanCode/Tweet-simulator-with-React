@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Container, Snackbar } from "@mui/material";
 //import Container from '@mui/material/Button';
+import ListTweets from "./components/ListTweets";
 
 import Header from "./components/header";
 import SendTweet from "./components/sendtweet";
@@ -18,13 +19,14 @@ function App() {
   useEffect(() => {
     const AllTweetsStorage = localStorage.getItem(TWEET_STORAGE);
     const allTweetsArray = JSON.parse(AllTweetsStorage);
-    setAllTweets(allTweetsArray)
-    }, []);
+    setAllTweets(allTweetsArray);
+  }, []);
 
-    return (
+  return (
     <Container className="tweets-simulator" maxWidth={false}>
       <Header></Header>
-      <SendTweet setToastProps={setToastProps} allTweets={allTweets}/>
+      <SendTweet setToastProps={setToastProps} allTweets={allTweets} />
+      <ListTweets allTweets={allTweets} />
 
       <Snackbar
         anchorOrigin={{

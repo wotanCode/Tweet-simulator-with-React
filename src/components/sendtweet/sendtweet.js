@@ -66,7 +66,7 @@ export default function SendTweet(props) {
       >
         <AddIcon />
       </Fab>
-      //Abrimos modal
+      {/* Abrimos modal */}
       <ModalContainer isOpenModal={isOpenModal} closeModal={closeModal}>
         //llamamos al form dentro del modal y enviamos sendTweet
         <FormSendTweet sendTweet={sendTweet} />
